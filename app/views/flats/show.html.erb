@@ -1,0 +1,19 @@
+<div class="show">
+  <div class="single-flat">
+    <h1><%= @flat.name %></h1>
+    <%= link_to edit_flat_path do %>
+      <i class="fas fa-pen-square"></i>
+    <% end %>
+    <%= link_to flat_path(@flat), method: :delete, data: {confirm: "Are you sure?"} do %>
+      <i class="fas fa-trash-alt"></i>
+    <% end %>
+  </div>
+
+  <div class="single-info">
+    <p> <%= "€ #{@flat.description}" %> </p>
+    <div class="single-prices">
+      <p> <%= "#{@flat.number_of_guests} guests" %> </p>
+      <p> <%= @flat.price_per_night %> </p>
+    </div>
+  </div>
+</div>

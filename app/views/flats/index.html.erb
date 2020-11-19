@@ -1,0 +1,28 @@
+<div class="title">
+  <h1>All Flats For Rent</h1>
+</div>
+
+<div class = "flat-cards">
+  <% @flats.each do |flat| %>
+      <%= link_to flat_path(flat) do %>
+        <div class = "flat-card">
+          <img src="https://picsum.photos/200/300?random=<%= rand(1..10) %>">
+          <div class = "name">
+            <%= flat.name %>
+          </div>
+          <div class = "description">
+            <%= flat.description %>
+          </div>
+          <div class = "flat-info">
+            <div>
+              <%= "#{flat.number_of_guests} Guests" %>
+            </div>
+            <div>
+              <%= "€ #{flat.price_per_night}" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  <% end %>
+</div>
+
